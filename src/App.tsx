@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import UIWidgets from './pages/UIWidgets';
 import StateManagement from './pages/StateManagement';
@@ -116,9 +117,9 @@ import ServerComponentsDemo from './components/08-advanced/ServerComponentsDemo'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navigation />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             
@@ -235,6 +236,7 @@ function App() {
             <Route path="/advanced/server-components" element={<ServerComponentsDemo />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );

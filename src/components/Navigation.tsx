@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X, Home } from 'lucide-react';
+import { ChevronDown, Menu, X, Home, Github } from 'lucide-react';
 
 interface NavItem {
   title: string;
@@ -219,10 +219,30 @@ const Navigation: React.FC = () => {
                 )}
               </div>
             ))}
+            {/* GitHub Link */}
+            <a
+              href="https://github.com/mehulmorker/react-machine-coding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              aria-label="View source code on GitHub"
+            >
+              <Github className="h-5 w-5" />
+              <span className="hidden lg:inline">GitHub</span>
+            </a>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu button and GitHub link */}
+          <div className="md:hidden flex items-center gap-2">
+            <a
+              href="https://github.com/mehulmorker/react-machine-coding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
+              aria-label="View source code on GitHub"
+            >
+              <Github className="h-6 w-6" />
+            </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
@@ -237,6 +257,18 @@ const Navigation: React.FC = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            {/* GitHub Link in Mobile Menu */}
+            <a
+              href="https://github.com/mehulmorker/react-machine-coding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              <Github className="h-5 w-5" />
+              <span>View Source Code on GitHub</span>
+            </a>
+            <div className="border-t border-gray-200 my-2"></div>
             {navigationData.map((category) => (
               <div key={category.category}>
                 {category.categoryPath ? (
