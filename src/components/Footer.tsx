@@ -13,9 +13,15 @@ const Footer: React.FC = () => {
             <span>by</span>
           </div>
           <div className="text-center">
-            <span className="text-lg font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 bg-clip-text text-transparent">
+            <a
+              href="https://github.com/mehulmorker"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 bg-clip-text text-transparent hover:from-blue-700 hover:via-cyan-600 hover:to-indigo-700 transition-all duration-300 cursor-pointer inline-block"
+              aria-label="Visit Mehul Morker's GitHub profile"
+            >
               Mehul Morker
-            </span>
+            </a>
           </div>
           <div className="text-xs text-gray-400 mt-1">
             Crafted with passion and attention to detail
